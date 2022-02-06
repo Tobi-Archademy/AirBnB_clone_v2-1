@@ -81,16 +81,16 @@ class FileStorage:
     def close(self):
         """call reload() method for deserializing the JSON file to objects"""
         self.reload()
-    
-    def get(self, cls, id):                                                                                                                              
-        """gets the id of the object"""                                                                                                                  
-        if cls is None:                                                                                                                                  
-            return None                                                                                                                                  
-        obj = self.all(cls)                                                                                                                              
-        for obj in obj.values():                                                                                                                         
-            if obj == obj.id:                                                                                                                            
-                return obj                                                                                                                               
-                                                                                                                                                         
-    def count(self, cls=None):                                                                                                                           
-        """Count objects in storage"""                                                                                                                   
-        return len(self.all(cls))  
+
+    def get(self, cls, id):
+        """gets the id of the object"""
+        if cls is None:
+            return None
+        obj = self.all(cls)
+        for obj in obj.values():
+            if obj == obj.id:
+                return obj
+
+    def count(self, cls=None):
+        """Count objects in storage"""
+        return len(self.all(cls))
